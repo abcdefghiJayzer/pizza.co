@@ -1,0 +1,1317 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neua", Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: rgb(247, 178, 40);
+    width: 100%;
+}
+
+body {
+    
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 3.5em;
+    font-family: 'century gothic';
+    margin: 0;
+    padding: 20px 0;
+    max-width: 100%;
+}
+
+.fixed-width-main {
+    width: 1440px;
+    margin: auto;
+}
+
+.fixed-width {
+    width: 1030px;
+    margin: auto;
+}
+
+.empty-space {
+    margin-bottom: 3rem;
+}
+
+.clearfix:before,
+.clearfix:after { 
+    content:""; 
+    display: table;
+}
+
+.clearfix:after { 
+    clear: both;
+}
+
+
+
+
+
+/* =============================
+        LOADING SCREEN
+==============================*/
+
+.loader{ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(39, 39, 39);
+    transition:  ease opacity 0.75s, visibility 1s;
+    z-index: 100;
+}
+
+.loader-hidden{
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid rgba(255, 255, 255, 0.867);
+    border-top-color:rgb(247, 178, 40);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from{
+        transform:  rotate(0turn);
+
+    }to{
+        transform: rotate(1turn);
+    }
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color:rgb(39, 39, 39);
+    color:rgb(247, 178, 40);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    transition: .6s;
+    font-weight: bolder;
+  }
+  
+  #myBtn:hover {
+    background-color:rgb(247, 178, 40);
+    color: rgb(39, 39, 39);
+    transform: scale(1.3);
+    border-radius: 0px;
+
+  }
+
+/* =============================
+            HEADER
+==============================*/
+
+/* */
+
+.homepage {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    height: 800px;
+    background-image: url(../Images/homepage-main-visual.png);
+    background-color: rgb(247, 178, 40);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    background-position: center;
+    background-attachment: fixed ;
+    
+}
+
+/* contains the top bar menus such as logo, menu, home, about and locations*/
+    .homepage-top-bar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-image: linear-gradient(rgba(15, 15, 15, 0.865), rgba(247, 178, 40, 0));
+        position: fixed;
+        z-index: 99;
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+        #main-logo {
+            padding-left: 20px;
+            width: 300px;
+        }
+
+        .homepage-nav {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+        }
+
+        nav > a {
+            text-transform: uppercase;
+            font-weight: bolder;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5em;
+            font-family: 'century gothic';
+            align-self: center;
+            transition: .6s;
+        }
+/* creates an effect when mouse is hovered above the element*/
+        nav > a:hover {
+            color: rgb(247, 111, 0);
+            font-size: 1.6em;
+            
+        }
+
+    .homepage > .paint-splatter {
+        height: 100%;
+        background-image: url(../Images/paint-splatter.png);
+        background-size: 1200px;
+        background-repeat: repeat-x;
+        background-position: bottom;
+   }
+
+/* =============================
+            About Us
+============================== */
+
+.main-body {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+    .about-us-section{
+        display: grid;
+        grid-template-columns: 1fr;
+        background-color: rgb(39, 39, 39);
+    }
+
+    .about-us-history {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin: auto;
+        padding-bottom: 70px;
+    }
+
+    .about-us-section > h2 {
+        color: rgb(247, 178, 40);
+        padding-top: 60px;
+    }
+
+    .about-us-history > img {
+        width: 400px;
+        padding: 20px;
+    }
+
+    .about-us-history > p {
+        padding: 0 20px;
+        font-size: 1.3em;
+        color: whitesmoke;
+        text-align: left;
+    }
+
+/* The different javascript css modification that will occur when conditions are met such as scroll position */
+/* The after effects for the javascript functions*/
+
+    .reveal{ 
+        transform: translateY(150px);
+        opacity: 0;
+        transition: all 1s ease;
+    }
+
+
+    .reveal-side{
+        transform: translateX(150px);
+        opacity: 0;
+        transition: all 1s ease;
+    }
+
+    .reveal-left{
+        transform: translateX(-150px);
+        opacity: 0;
+        transition: all 1s ease;
+    }
+
+    .reveal-top{
+        transform: translateY(-150px);
+        opacity: 0;
+        transition: all 1s ease;
+    }
+
+    .active {
+        transform: translateY(0px);
+        opacity: 1;
+        
+    }
+
+ /* =============================
+        About Us Claims
+============================== */
+
+    .about-claims {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+        column-gap: 2em;
+        padding-bottom: 150px;
+    }
+
+    .about-claims > div {
+        align-items: flex-start;
+        padding: 40px 40px ;
+        text-align: center;
+        background-color: rgb(247, 178, 40);
+        height: 350px;
+        border-radius: 1em;
+    }
+  
+    .about-claims > div:nth-child(3) { 
+        margin: 0 40px 0 0;
+    }
+
+    .about-claims > div:nth-child(2) { 
+        margin: 0px 20px 0 20px;
+    }
+
+    .about-claims > div:nth-child(1) { 
+        margin: 0 0 0 40px;
+    }
+
+    .about-claims > div > img {
+        padding: 0 0 30px;
+    }
+
+    .about-claims > div > p {
+        color: rgb(39, 39, 39);
+        font-family: 'century gothic';
+        font-weight: bold;
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+
+ /* =============================
+             Menu
+============================== */
+
+    .paint-splatter-reverse {
+        background-image: url(../Images/paint-splatter-reverse.png);
+        height: 200px;      
+        background-size: 1200px;
+        background-repeat: repeat-x;
+        background-position: top;
+    }
+
+
+.menu-section {
+    height: 800px;
+}
+
+    .menu-section ul li  h3 {
+        text-transform: uppercase;
+    }
+
+    .menu-section > h2 {
+        padding-bottom: 50px;
+    }
+
+    .menu-pizza-top {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        gap: 2em;
+        padding: 0px;
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .menu-pizza-top > div {
+        text-align: center;
+        padding: 20px; 
+    }
+
+    .menu-pizza-top img {
+        transition: transform .6s ease-in-out;
+    }
+
+    .menu-pizza-top > div > img:hover {
+        transform: scale(1.1);
+        transform: rotate(190deg);
+    }
+
+    .menu-pizza-top > div > h4 {
+        font-size: .8em;
+    }
+
+    .takeout-quote {
+        font-family: 'century gothic';
+        font-size: 1.2em;
+        color: black;
+        font-weight: bold;
+        margin: auto;
+        padding-bottom: 20px;
+        text-align: center;
+        width: 1000px;
+    }
+
+    .allergens {
+        font-family: 'century gothic';
+        font-size: 1.2em;
+        color: black;
+        font-weight: bold;
+        margin: auto;
+        text-align: center;
+        width: 1000px;
+    }
+
+
+    .full-menu{
+        
+        text-align: center;
+        padding: 30px;
+        background-color:rgb(39, 39, 39);
+        width: 150px;
+        margin: auto;
+        border-radius: 5px;
+        margin-top: 40px;
+        transition: .2s;
+    }
+
+    .full-menu > a {
+    color:rgb(247, 178, 40);
+        font-size: 1.2em;
+        font-weight: bolder;
+        text-decoration: none;
+        
+    }
+
+    .full-menu:hover {
+
+        color: rgb(39, 39, 39);
+        transform: scale(1.2);
+        border-radius: 0px;
+
+    }
+
+    .full-menu >a:hover {
+    
+        transform: scale(1.3);
+        border-radius: 0px;
+
+    }
+    
+
+ /* =============================
+            Location
+============================== */
+
+.brick-oven {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 200px;
+    background-image: url(../Images/brick-oven.png);
+    background-size: 700px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.brick-border {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 21px ;
+    background-image: url(../Images/brick-border.png);
+    background-size: 600px;
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+
+.location-section {
+    background-color: rgb(39, 39, 39);
+    height: 800px;
+    margin: 0;
+}
+
+    .location-section > h2 {
+        padding: 80px 0 50px;
+    }
+
+    .location-contents {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 450px;
+        column-gap: 3em;
+        margin: auto;
+        
+        
+    }
+
+    .location-address {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        height: 450px;
+        overflow-y: hidden ;
+        overflow-x: hidden;
+        padding: 0px 20px;    
+        
+        
+    }
+
+    .location-address:hover {
+        overflow-y: scroll;
+       
+    }
+
+    .location-address::-webkit-scrollbar {
+        width: 5px;
+        
+    }
+
+    .location-address::-webkit-scrollbar-thumb {
+        background: rgb(255, 255, 255); 
+        
+    }
+
+    .location-address > div {
+        padding: 0px 0px 32px;
+    }
+
+    .location-contents .location-maps {
+        height: 450px;
+    }
+
+    .location-address p {
+        padding: 0;
+        margin: 0;
+        color: rgb(255, 255, 255);
+    }
+
+    .location-address h4 {
+        font-size: 1.2em;
+        padding: 0;
+        margin: 0;
+        color: rgb(247, 178, 40);
+    }
+
+
+.footer-section {
+    height: 430px;
+
+}    
+
+    #crasht-logo {
+        height: 50px;
+        padding: 25px 30px;
+    }
+
+    .footer-section > nav {
+        display: grid;
+        height: 100px;
+        grid-template-columns: repeat(4,1fr);
+        margin: auto;
+        width: 950px;
+        font-weight: bolder;
+        
+    }
+
+    .footer-section > nav > a {
+        margin: auto;
+        color: white;
+        font-size: 1.2em;
+        text-decoration: none;
+        transition: .3s ; 
+    }
+
+    .footer-section a:hover {
+        font-size: 1.4em;
+        color:rgb(39, 39, 39);
+    }
+    
+    .social-media-icon {
+        display: grid;
+        grid-template-columns: repeat(3 ,1fr);
+        width: 500px;
+        margin: auto;
+    }
+
+    .social-media-icon > a {
+        padding: 20px;
+        margin: auto;
+    }
+
+    .social-media-icon > a > img {
+        width: 50px;
+        transition: transform .2s; 
+        
+    }
+
+    .social-media-icon a > img:hover {
+        transform: scale(1.3);
+        
+    }
+
+    .footer-section p {
+        text-transform: uppercase;
+        font-size: 1em;
+        text-align: center;
+        padding-top: 50px;
+        font-weight:900;
+        color: rgb(39, 39, 39);
+        font-family: "century gothic";
+    }
+
+
+       /*   =============================
+            =============================
+            =============================
+            =============================
+            =============================
+            =============================
+            =============================
+            =============================
+                      MOBILE
+            =============================
+            =============================
+            =============================
+            =============================
+            =============================
+            =============================
+            =============================
+            =============================  */
+
+    @media only screen and (max-width: 480px) {
+
+
+        body {
+            font-family: "Helvetica Neua", Helvetica, sans-serif;
+            font-size: 16px;
+            background-color: rgb(247, 178, 40);
+            overflow-x: hidden;
+            margin: auto;
+        }
+        
+        body {
+            overflow-x: hidden;
+            
+        }
+        
+        h2 {
+            text-align: center;
+            color: white;
+            font-size: 5em;
+            font-family: 'century gothic';
+            margin: 0;
+            padding: 20px 0;
+            max-width: 100%;
+        }
+        
+        .fixed-width-main {
+            width: 1440px;
+            margin: auto;
+        }
+        
+        .fixed-width {
+            width: 1030px;
+            margin: auto;
+        }
+        
+        .empty-space {
+            margin-bottom: 3rem;
+        }
+        
+        .clearfix:before,
+        .clearfix:after { 
+            content:""; 
+            display: table;
+        }
+        
+        .clearfix:after { 
+            clear: both;
+        }
+        
+        
+        /* =============================
+                    HEADER
+        ==============================*/
+        
+        .homepage {
+            display: grid;
+            grid-template-rows: 1;
+            height: 250%;
+            background-image: url(../Images/mobile-homepage-main-visual.png);
+            background-color: rgb(247, 178, 40);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: auto;
+            background-position: center;
+            background-attachment: fixed;
+            width: 280%;
+            
+        }
+        
+            .homepage-top-bar {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                background-image: linear-gradient(rgba(15, 15, 15, 0.865), rgba(247, 178, 40, 0));
+                position: fixed;
+                z-index: 100;
+                width: 100%;
+                padding-bottom: 40px;
+            }
+        
+                #main-logo {
+                    padding-left: 20px;
+                }
+        
+                .homepage-nav {
+                    display: grid;
+                    grid-template-columns: repeat(4, auto);
+                }
+        
+                nav > a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: white;
+                    font-size: 1.5rem;
+                    font-family: 'century gothic';
+                    align-self: center;
+                }
+        
+            .homepage > .paint-splatter {
+                
+                height: 100%;
+                background-image: url(../Images/paint-splatter.png);
+                background-size: 1200px;
+                background-repeat: repeat-x;
+                background-position: bottom;
+           }
+        
+        /* =============================
+                    About Us
+        ============================== */
+        
+        .main-body {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+        
+
+            .about-us-section{
+                display: grid;
+                grid-template-columns: 1fr;
+                background-color: rgb(39, 39, 39);
+            }
+        
+            .about-us-history {
+                display: grid;
+                grid-template-columns: 1fr;
+                margin: auto;
+                padding: 20px 0 40px;
+            }
+        
+            .about-us-section > h2 {
+                color: rgb(247, 178, 40);
+                padding-top: 90px;
+            }
+        
+            .about-us-history > img {
+                margin: auto;
+                width: 400px;
+                padding: 20px  0px;
+            }
+        
+            .about-us-history > p {
+                
+                padding: 10px 50px 0;
+                font-size: 2em;
+                color: whitesmoke;
+                text-align: center;
+            }
+
+
+            
+        
+         /* =============================
+                About Us Claims
+        ============================== */
+        
+            .about-claims {
+                display: grid;
+                grid-template-columns: 1fr 1fr ;
+                align-items: center;
+                margin: 10px;
+                column-gap: 3em;
+                padding-bottom: 150px;
+               
+            }
+
+            .about-claims > div:nth-child(3) { 
+                margin: 40px 0px 0px 40px;
+            }
+        
+            .about-claims > div:nth-child(2) { 
+                margin: 0px 40px 0 0px;
+            }
+        
+            .about-claims > div:nth-child(1) { 
+                margin: 0px 0 0 40px;
+            }
+        
+            .about-claims > div > img {
+                padding: 0 0 0px;
+            }
+        
+            .about-claims > div {
+                margin: 0px;
+                align-items: flex-start;
+                text-align: center;
+                background-color: rgb(247, 178, 40);
+                height: 300px;
+                border-radius: 1em;
+            }
+        
+            .about-claims > div > p {
+                margin: 0px;
+                color: rgb(39, 39, 39);
+                font-family: 'century gothic';
+                font-weight: bold;
+                font-size: 1.3em;
+                padding-top: 50px;
+                text-align: center;
+            }
+        
+        
+         /* =============================
+                     Menu
+        ============================== */
+        
+            .paint-splatter-reverse {
+                background-image: url(../Images/paint-splatter-reverse.png);
+                height: 200px;      
+                background-size: 1200px;
+                background-repeat: repeat-x;
+                background-position: top;
+            }
+        
+        
+        .menu-section {
+            height: 1600px;
+        }
+        
+            .menu-section ul li  h3 {
+                text-transform: uppercase;
+            }
+        
+            .menu-section > h2 {
+                padding-bottom: 50px;
+            }
+        
+            .menu-pizza-top {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+                gap: 2em;
+                padding: 0px;
+                width: 400px;
+                margin: 0 auto;
+            }
+        
+            .menu-pizza-top > div {
+                text-align: center;
+                padding: 20px; 
+
+            }
+        
+            .menu-pizza-top img {
+                transition: transform .6s ease-in-out;
+                height: 300px;
+                width: 300px;
+            }
+        
+            .menu-pizza-top > div > img:hover {
+                transform: scale(1.1);
+                transform: rotate(190deg);
+            }
+        
+            .menu-pizza-top > div > h4 {
+                font-size: 1.2em;
+            }
+        
+            .takeout-quote {
+                font-family: 'century gothic';
+                font-size: 1.5em;
+                color: black;
+                font-weight: bold;
+                margin: auto;
+                padding-bottom: 20px;
+                text-align: center;
+                width: 1000px;
+            }
+        
+            .allergens {
+                font-family: 'century gothic';
+                font-size: 1.5em;
+                color: black;
+                font-weight: bold;
+                margin: auto;
+                text-align: center;
+                width: 1000px;
+            }
+        
+            /* ===== Meat =====*/
+        
+            .meat-banner {
+                height: 400px;
+                background-attachment: fixed;
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 70px 0 100px 0;
+                background-image: url(../Images/meat-banner.jpg);
+            }
+        
+            .meat-banner #meat-pizza-text {
+                padding-top: 50px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 600px;
+            }
+        
+            .menu-items-meat {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+                gap: 2em;
+                padding: 0px;
+            }
+        
+            .menu-items-meat > li {
+                list-style-type: none;
+                text-align: center;
+                padding-bottom: 20px;
+                width: 325px;
+                justify-content: center;
+                width: 100%;
+            }
+        
+            .menu-items-meat img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                transition: transform .3s;
+            }
+            
+            .menu-items-meat .zoomer {
+                overflow: hidden;
+                width: 500px;
+                height: 500px;
+            }
+        
+            .menu-items-meat img:hover {
+                transform: scale(1.1);
+            }
+        
+            .menu-items-meat > li > h3 {
+                font-size: 3em;
+                font-weight: bolder;
+                font-family: 'century gothic';
+                margin: 0;
+                padding: 20px 20px; 
+            }
+        
+            .menu-items-meat > li > p {
+                margin: 0;
+                padding: 0 20px;
+                font-size: 2em;
+                font-family: 'century gothic';
+                
+            }
+        
+            /* ===== Vegetarian =====*/
+        
+            .vegetarian-banner {
+                height: 400px;
+                background-attachment: fixed;
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 100px 0 ;
+                background-image: url(../Images/vegetarian-banner.jpg);
+            }
+        
+            .vegetarian-banner #vegetarian-pizza-text {
+                padding-top: 100px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 800px;
+            }
+        
+            .menu-items-vegetarian {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+                gap: 2em;
+                padding: 0px;
+            }
+        
+            .menu-items-vegetarian > li {
+                list-style-type: none;
+                text-align: center;
+                padding-bottom: 20px;
+                width: 325px;
+                justify-content: center;
+                width: 100%; 
+            }
+        
+            .menu-items-vegetarian img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                transition: transform .3s;
+            }
+            
+            .menu-items-vegetarian .zoomer {
+                overflow: hidden;
+                width: 500px;
+                height: 500px;
+            }
+        
+            .menu-items-vegetarian img:hover {
+                transform: scale(1.1);
+            }
+        
+            .menu-items-vegetarian  > li > h3 {
+                font-size: 3em;
+                font-weight: bolder;
+                font-family: 'century gothic';
+                margin: 0;
+                padding: 20px 20px; 
+            }
+        
+            .menu-items-vegetarian  > li > p {
+                margin: 0;
+                padding: 0 20px;
+                font-size: 2em;
+                font-family: 'century gothic';
+            }
+        
+        
+            /* ===== Vegan =====*/
+        
+            .vegan-banner {
+                height: 400px;
+                background-attachment: fixed;
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 100px 0 ;
+                background-image: url(../Images/vegan-banner.jpg);
+            }
+        
+            .vegan-banner #vegan-pizza-text {
+                padding-top: 90px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 500px;
+            }
+        
+            .menu-items-vegan {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+                gap: 2em;
+                padding: 0px;
+            }
+        
+            .menu-items-vegan > li {
+                list-style-type: none;
+                text-align: center;
+                padding-bottom: 20px;
+                width: 325px;
+                justify-content: center;
+                width: 100%;
+            }
+        
+            .menu-items-vegan img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                transition: transform .3s;
+            }
+            
+            .menu-items-vegan .zoomer {
+                overflow: hidden;
+                width: 500px;
+                height: 500px;
+            }
+        
+            .menu-items-vegan img:hover {
+                transform: scale(1.1);
+                
+            }
+        
+            .menu-items-vegan > li > h3 {
+                font-size: 3em;
+                font-weight: bolder;
+                font-family: 'century gothic';
+                margin: 0;
+                padding: 20px 20px;   
+            }
+        
+            .menu-items-vegan > li > p {
+                margin: 0;
+                padding: 0 20px;
+                font-size: 2em;
+                font-family: 'century gothic';
+            }
+        
+             /* ===== Dessert =====*/
+        
+            .dessert-banner {
+                height: 400px;
+                background-attachment: fixed;
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 100px 0 ;
+                background-image: url(../Images/dessert-banner.jpg);
+            }
+        
+            .dessert-banner #dessert-text {
+                padding-top: 140px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 700px;
+            }
+        
+            .menu-items-dessert {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+                gap: 2em;
+                padding: 0px;
+            }
+        
+            .menu-items-dessert > li {
+                list-style-type: none;
+                text-align: center;
+                padding-bottom: 20px;
+                width: 325px;
+                justify-content: center;
+                width: 100%;
+            }
+        
+            .menu-items-dessert img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                transition: transform .3s;
+            }
+            
+            .menu-items-dessert .zoomer {
+                overflow: hidden;
+                width: 500px;
+                height: 500px;
+            }
+        
+            .menu-items-dessert img:hover {
+                transform: scale(1.1);
+                
+            }
+        
+            .menu-items-dessert > li > h3 {
+                font-size: 3em;
+                font-weight: bolder;
+                font-family: 'century gothic';
+                margin: 0;
+                padding: 20px 20px;  
+            }
+        
+            .menu-items-dessert > li > p {
+                margin: 0;
+                padding: 0 20px;
+                font-size: 2em;
+                font-family: 'century gothic';
+            }
+            
+        
+         /* =============================
+                    Location
+        ============================== */
+        
+        .brick-oven {
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 200px;
+            background-image: url(../Images/brick-oven.png);
+            background-size: 700px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+        
+        .brick-border {
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 21px ;
+            background-image: url(../Images/brick-border.png);
+            background-size: 600px;
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+        
+        
+        .location-section {
+            background-color: rgb(39, 39, 39);
+            height: 1800px;
+            margin: 0;
+        }
+        
+            .location-section > h2 {
+                padding: 80px 0 50px;
+            }
+        
+            .location-contents {
+                display: grid;
+                grid-template-columns: 1fr;
+                height: 450px;
+                column-gap: 3em;
+                margin: auto;
+                
+            }
+        
+            .location-address {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+                height: 700px;
+                overflow-y: hidden ;
+                overflow-x: hidden;
+                padding: 0px 20px;    
+            }
+        
+            .location-address:hover {
+                overflow-y: scroll;
+            }
+        
+            .location-address::-webkit-scrollbar {
+                width: 5px;
+            }
+        
+            .location-address::-webkit-scrollbar-thumb {
+                background: rgb(255, 255, 255); 
+            }
+        
+            .location-address > div {
+                padding: 0px 0px 32px;
+                padding: 0 50px;
+            }
+        
+            .location-contents .location-maps {
+                height: 700px;
+                padding: 0 50px;
+            }
+        
+            .location-address p {
+                padding: 10px 0 ;
+                margin: 0;
+                color: rgb(255, 255, 255);
+                font-size: 1.5em;
+            }
+        
+            .location-address h4 {
+                font-size: 2.5em;
+                padding: 45px 0 0 0;
+                margin: 0;
+                color: rgb(247, 178, 40);
+            }
+                
+        .footer-section {
+            height: 820px;
+        }    
+
+            #crasht-logo {
+                height: 80px;
+                padding: 30px 40px;
+            }
+
+            .footer-section > nav {
+                display: grid;
+                height: 350px;
+                grid-template-columns: repeat(1,1fr);
+                margin: auto;
+                width: 950px;
+                font-weight: bolder;
+                font-size: 2em;
+                padding-bottom: 30px;
+                
+            }
+
+            .footer-section > nav > a {
+                margin: auto;
+                color: white;
+                font-size: 1.2em;
+                text-decoration: none;
+                transition: .3s ; 
+            }
+
+            .footer-section a:hover {
+                font-size: 1.4em;
+                color:rgb(39, 39, 39);
+            }
+            
+            .social-media-icon {
+                display: grid;
+                grid-template-columns: repeat(3 ,1fr);
+                width: 500px;
+                margin: auto;
+            }
+
+            .social-media-icon > a {
+                padding: 20px;
+                margin: auto;
+            }
+
+            .social-media-icon > a > img {
+                width: 90px;
+                transition: transform .2s; 
+                
+            }
+
+            .social-media-icon a > img:hover {
+                transform: scale(1.3);
+                
+            }
+
+            .footer-section p {
+                text-transform: uppercase;
+                font-size: 2em;
+                text-align: center;
+                font-weight: bolder;
+                color: rgb(39, 39, 39);
+                font-family: "century gothic";
+            }
+    }

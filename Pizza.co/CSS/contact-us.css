@@ -1,0 +1,516 @@
+body {
+    font-family: "Helvetica Neua", Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: rgb(247, 178, 40);
+    width: 100%;
+}
+
+body {
+    margin: auto;
+    background-image: url(../Images/Webpages/homepage-background.png);
+    background-color: rgb(247, 178, 40);
+    background-position: center;
+    text-align: justify;
+    font-family: 'century gothic';
+}
+
+
+
+.fixed-width-main {
+    width: 1440px;
+    margin: auto;
+}
+
+.fixed-width {
+    width: 1030px;
+    margin: auto;
+}
+
+.empty-space {
+    margin-bottom: 3rem;
+}
+
+.clearfix:before,
+.clearfix:after { 
+    content:""; 
+    display: table;
+}
+
+.clearfix:after { 
+    clear: both;
+}
+
+/* =============================
+        LOADING SCREEN
+==============================*/
+
+.loader{ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(39, 39, 39);
+    transition:  ease opacity 0.75s, visibility 1s;
+    z-index: 100;
+}
+
+.loader-hidden{
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid rgba(255, 255, 255, 0.867);
+    border-top-color:rgb(247, 178, 40);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from{
+        transform:  rotate(0turn);
+
+    }to{
+        transform: rotate(1turn);
+    }
+}
+
+
+
+
+/* =============================
+        Navigation Bar
+==============================*/
+
+.homepage-top-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+    #main-logo {
+        padding-left: 20px;
+    }
+
+    .homepage-nav {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+    }
+
+    nav > a {
+        text-transform: uppercase;
+        font-weight: bolder;
+        text-decoration: none;
+        color: white;
+        font-size: 1.5em;
+        font-family: 'century gothic';
+        align-self: center;
+        transition: .6s;
+    }
+
+    nav > a:hover {
+        color: rgb(247, 111, 0);
+        font-size: 1.6em;
+    }
+
+
+    h2 {
+        text-align: center;
+        color: rgb(247, 178, 40);
+        font-size: 3.5em;
+        font-family: 'century gothic';
+        padding-top: 10px;
+        margin: 0;
+        background-color: rgb(39, 39, 39);
+    }
+
+/* =============================
+            HEADER
+==============================*/
+
+.homepage {
+    background-color: rgb(39, 39, 39);
+    height: 250px;
+    
+}
+
+.paint-splatter {
+    background-image: url(../Images/paint-splatter-reverse.png);
+    height: 200px;      
+    background-size: 1200px;
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+.main-body {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+    p {
+        margin: auto;
+        padding-top: 10px
+    }
+
+
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    h3{
+        text-align: center;
+    }
+
+    input[type=submit] {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #ffffff;
+    color: rgb(247, 178, 40);
+    }
+
+    .container {
+    border-radius: 5px;
+    padding: 20px;
+    }
+
+    label{
+        text-align: center;
+        width: 100px;
+    }
+
+    
+
+
+
+
+
+
+    .footer-section {
+        height: 400px;
+        background-color: rgb(39, 39, 39);
+    }    
+    
+        #crasht-logo {
+            height: 50px;
+            padding: 25px 30px;
+        }
+    
+        .footer-section > nav {
+            display: grid;
+            height: 100px;
+            grid-template-columns: repeat(4,1fr);
+            margin: auto;
+            width: 950px;
+            font-weight: bolder;
+            
+        }
+    
+        .footer-section > nav > a {
+            margin: auto;
+            color: rgb(247, 178, 40);
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: .3s ; 
+        }
+    
+        .footer-section a:hover {
+            font-size: 1.4em;
+            color: rgb(255, 255, 255);
+        }
+        
+        .social-media-icon {
+            display: grid;
+            grid-template-columns: repeat(3 ,1fr);
+            width: 500px;
+            margin: auto;
+        }
+    
+        .social-media-icon > a {
+            padding: 20px;
+            margin: auto;
+        }
+    
+        .social-media-icon > a > img {
+            width: 50px;
+            transition: transform .3s; 
+        }
+    
+        .social-media-icon a > img:hover {
+            transform: scale(1.3);
+        }
+    
+        .footer-section p {
+            text-transform: uppercase;
+            font-size: 1em;
+            text-align: center;
+            padding-top: 50px;
+            font-weight: bolder;
+            color: rgb(247, 178, 40);
+            font-family: "century gothic";
+        }
+    
+
+    
+
+
+
+   
+    
+    
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    @media only screen and (max-width: 480px) {
+
+
+        .body {
+            font-family: "Helvetica Neua", Helvetica, sans-serif;
+            font-size: 16px;
+            background-color: rgb(247, 178, 40);
+            overflow-x: hidden;
+            width: 280%;
+            margin: auto;
+            background-image: url(../Images/Webpages/homepage-background.png);
+            background-position: center;
+            text-align: justify;
+            font-family: 'century gothic';
+        }
+    
+        .fixed-width-main {
+            width: 1440px;
+            margin: auto;
+        }
+        
+        .fixed-width {
+            width: 1030px;
+            margin: auto;
+        }
+        
+        .empty-space {
+            margin-bottom: 3rem;
+        }
+        
+        .clearfix:before,
+        .clearfix:after { 
+            content:""; 
+            display: table;
+        }
+        
+        .clearfix:after { 
+            clear: both;
+        }
+        
+        
+        /* =============================
+                Navigation Bar
+        ==============================*/
+        
+        .homepage-top-bar {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding-bottom: 40px;
+        }
+        
+            #main-logo {
+                padding-left: 20px;
+            }
+        
+            .homepage-nav {
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+            }
+        
+            nav > a {
+                text-transform: uppercase;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                font-size: 1.5rem;
+                font-family: 'century gothic';
+                align-self: center;
+            }
+        
+        
+            h2 {
+                text-align: center;
+                color: rgb(247, 178, 40);
+                font-size: 3.5em;
+                font-family: 'century gothic';
+                padding-top: 10px;
+                margin: 0;
+                background-color: rgb(39, 39, 39);
+            }
+        
+        /* =============================
+                    HEADER
+        ==============================*/
+        
+        .homepage {
+            background-color: rgb(39, 39, 39);
+            height: 250px;
+            width: 280%;
+        }
+        
+        .paint-splatter {
+            background-image: url(../Images/paint-splatter-reverse.png);
+            height: 200px;      
+            background-size: 1200px;
+            background-repeat: repeat-x;
+            background-position: top;
+            width: 280%;
+        }
+        
+        .main-body {
+            font-size: 2.5em;
+            font-weight: bolder;
+        }
+            p {
+                margin: auto;
+                padding-top: 10px
+            }
+        
+        
+            input[type=text], select, textarea {
+                font-size: .7em;
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: .4em;
+                box-sizing: border-box;
+                margin-top: 6px;
+                margin-bottom: 16px;
+                resize: vertical;
+            }
+        
+            h3{
+                text-align: center;
+            }
+        
+            input[type=submit] {
+            background-color: rgb(39, 39, 39);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: .4em;
+            cursor: pointer;
+            }
+        
+            input[type=submit]:hover {
+            background-color: #ffffff;
+            color: rgb(247, 178, 40);
+            }
+        
+            .container {
+            border-radius: 5px;
+            padding: 20px;
+            }
+        
+            label{
+                text-align: center;
+                width: 100px;
+            }
+        
+        
+            .footer-section {
+                height: 800px;
+                width: 280%;
+            }    
+    
+                #crasht-logo {
+                    height: 80px;
+                    padding: 30px 40px;
+                }
+    
+                .footer-section > nav {
+                    display: grid;
+                    height: 350px;
+                    grid-template-columns: repeat(1,1fr);
+                    margin: auto;
+                    width: 950px;
+                    font-weight: bolder;
+                    font-size: 2em;
+                    padding-bottom: 30px;
+                    
+                }
+    
+                .footer-section > nav > a {
+                    margin: auto;
+                    color: white;
+                    font-size: 1.2em;
+                    text-decoration: none;
+                    transition: .3s ; 
+                }
+    
+                .footer-section a:hover {
+                    font-size: 1.4em;
+                    color:rgb(39, 39, 39);
+                }
+                
+                .social-media-icon {
+                    display: grid;
+                    grid-template-columns: repeat(3 ,1fr);
+                    width: 500px;
+                    margin: auto;
+                }
+    
+                .social-media-icon > a {
+                    padding: 20px;
+                    margin: auto;
+                }
+    
+                .social-media-icon > a > img {
+                    width: 90px;
+                    transition: transform .2s; 
+                    
+                }
+    
+                .social-media-icon a > img:hover {
+                    transform: scale(1.3);
+                    
+                }
+    
+                .footer-section p {
+                    text-transform: uppercase;
+                    font-size: 2em;
+                    text-align: center;
+                    font-weight: bolder;
+                    color: rgb(247, 178, 40);
+                    font-family: "century gothic";
+                }
+    }

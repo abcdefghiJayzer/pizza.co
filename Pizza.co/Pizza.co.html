@@ -1,0 +1,370 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Pizza.co.css"">
+    <link rel="icon" href="./Images/pizza-favicon.png">
+    <script src="JS/Pizza.co.js"></script>
+    <title>Pizza.co</title>
+
+
+</head>
+
+<body>
+    <!--a button at the bottow that goes to the top of the page-->
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+
+
+<!-- a division for the loading animation when the page is loading-->
+    <div class="loader"></div>
+  
+        <header class="homepage">
+<!-- the navigation abar at the top containing the logo and the different section of the main webpage-->
+            <div class="homepage-top-bar">
+                <img src="./Images\main-logo.png" alt="Logo spells 'Pizza.co'" id="main-logo">
+
+                <nav class="homepage-nav">
+                    <a href="#">Home</a>
+                    <a href="#about-us">About Us</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#location">Location</a>
+                </nav>
+            </div>
+
+            <div></div>
+            <div class="paint-splatter" ">  
+            </div>
+            
+        </header>
+
+
+        
+<!-- main body contains the main contents of the webpage, divided into different sections-->
+        <div class="main-body">
+
+            <div class="about-us-section" id="about-us" >
+                <h2 class="reveal">About us</h2>
+<!-- contains the history of the store and an image of the earlier shops-->
+                <section class="about-us-history fixed-width">
+                    <img src="./Images/about-us-history.jpg" alt="" id="about-us-history">
+
+                    <p>
+                        Pizza.co has been creating over 40 years of great times and great memories in the Philippines. Having started its first store in Metro Manila way back in 1975, Pizza.co now operates nationwide with a strong store count of 307 stores, comprising of 171 Company-owned stores and 136 franchised stores.
+                        
+                        Pizza.co is one of the leading operators of Fast Casual Restaurants in the Philippines, focused on family casual dining. In 2020, Euromonitor reported Pizza.co as the market leader in both chained pizza full-service restaurant and chained full-service restaurant.
+                    </p>
+                </section>
+
+
+                <section class="about-claims fixed-width">
+
+                    <div class="card reveal-left">
+                        <img src="./Images/dough.png" alt="" id="dough">
+                        <p>
+                            A better pizza begins from the bottom up. That’s why the dough used for our hand-tossed, original crust is prepared with the finest ingredients.
+                        </p>
+                    </div>
+
+                    <div class="card reveal">
+                        <img src="./Images/delivery.png" alt="" id="delivery">
+                        <p>
+                            Pizza.co USA launched online pizza ordering in 2007, and in 2008 revolutionized the online delivery experience by launching the innovative Pizza Builder and Pizza.co Tracker tools.
+                        </p>
+                    </div>
+
+                    <div class="card reveal-side">
+                        <img src="./Images/ingredient.png" alt="" id="ingredient">
+                        <p>
+                            A major part of the recipe is Pizza.co deliciously fresh and irresistibly tasty topping ingredients that we scatter generously onto our famously fresh dough bases! 
+                        </p>
+                    </div>
+
+                </section>
+
+                
+
+            </div>
+<!--menu section of the restaurant website -->
+            <div class="menu-section" id="menu">
+                
+                <div class="paint-splatter-reverse ">
+
+                </div>
+
+                <h2 class="reveal">MENU</h2>
+
+                <p class="takeout-quote reveal-side"> Order takeout and delivery 7 days a week.</p>
+<!-- different variety available in the restaurant menu-->
+                <section class=" menu-pizza-top reveal-left">
+                    <div >
+                        <img src="./Images/top-meat-pizza.png" alt="" width="150px">
+                        <h4>MEATY PIZZA</h4>
+                    </div>
+
+                    <div>
+                        <img src="./Images/top-vegetarian-pizza.png" alt="" width="150px">
+                        <h4>VEGETARIAN PIZZA</h4>
+                    </div>
+
+                    <div>
+                        <img src="./Images/top-vegan-meat-pizza.png" alt="" width="150px">
+                        <h4>VEGAN PIZZA</h4>
+                    </div>
+
+                    <div>
+                        <img src="./Images/top-dessert.png" alt="" width="150px">
+                        <h4>DESSERT</h4>
+                    </div>
+
+                </section>
+
+                <p class="allergens reveal">
+                    Allergens: Attention guests with food allergies. Please be aware that our food may contain or come into contact with common allergens, such as dairy, eggs, wheat, soybeans, tree nuts or peanuts.
+                </p>
+
+                
+<!--a button that redirects the user to the full menu containing the different kinds of pizza and desserts and such -->
+
+                <div class="full-menu reveal-top">
+                    <a href="./full-menu.html">Full Menu</a>
+                </div>
+
+                
+
+            </div>
+
+
+            <div class="brick-oven" >
+                 
+            </div>
+
+            <div class="brick-border" >
+
+            </div>
+
+
+
+<!-- a location section containing a map and the different location around the country where they can find a branch of the restaurant -->
+            <div class="location-section"  id="location">
+
+                <h2 class="reveal">LOCATION</h2>
+
+                <div class="location-contents fixed-width" >
+
+                    <section class="location-maps reveal">
+<!--an embeded map with the use of google maps-->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d155708.23472551917!2d121.03670944111826!3d14.538927821148668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1670303894802!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    </section>
+<!--a scrollable section of the different locations -->
+                    <section class="location-address reveal-top">
+                        <div>
+                            <h4>Pangasinan, Philippines</h4>
+                            <p>Mcarthur Highway Barangay Nancayasan, Urdaneta, Pangasinan, 2428 Pangasinan</p>
+                        </div>
+
+                        <div>
+                            <h4>San Jose City, Philippines</h4>
+                            <p>353 Pan-Philippine Hwy, San Jose City, 3121 Nueva Ecija</p>
+                        </div>
+
+                        <div>
+                            <h4>Makati, Philippines</h4>
+                            <p>Magallanes, Makati, 4705 Kalakhang Maynila</p>
+                        </div>
+
+                        <div>
+                            <h4>Sampaloc, Manila, Philippines</h4>
+                            <p>Rodriguez Building, España Blvd, Sampaloc, Manila, 1008 Metro Manila</p>
+                        </div>
+
+                        <div>
+                            <h4>Taguig, Philippines</h4>
+                            <p>The LATRIA Construction Corporation, 33 Bayani Rd, Taguig, 1630 Metro Manila</p>
+                        </div>
+
+                        <div>
+                            <h4>SM City Clark, Philippines</h4>
+                            <p>SM Clark, Manuel A. Roxas Hwy, Clark Freeport, Angeles, 2009 Pampanga</p>
+                        </div>
+
+                        <div>
+                            <h4>Parañaque, Philippines</h4>
+                            <p>Olivarez Plaza, Ninoy Aquino Ave, Parañaque, 1708 Metro Manila</p>
+                        </div>
+
+                        <div>
+                            <h4>Muntinlupa, Philippines</h4>
+                            <p>Putatan, Muntinlupa, 1772 Kalakhang Maynila</p>
+                        </div>
+
+                        <div>
+                            <h4>Pasig, Philippines</h4>
+                            <p>Eastside Manors, 172 C. Raymundo Ave, Pasig, 1607 Metro Manila</p>
+                        </div>
+
+                        <div>
+                            <h4>Quezon City, Philippines</h4>
+                            <p>Matalino St, Diliman, Quezon City, 1101 Metro Manila</p>
+                        </div>
+
+                    </section>
+
+                </div>
+
+                
+
+            </div>
+
+            <footer class="footer-section">
+
+                <div class="brick-border">
+
+                </div>
+<!--footer section containing mainly the contact sections and social media. It also contains the different webpages such as terms and conditions and contact us form and such -->
+                <img src="Images/crasht-logo.png" alt="" id="crasht-logo">
+
+                <nav>
+                    <a href="./terms-and-conditions.html" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
+                    <a href="./contact-us.html" target="_blank" rel="noopener noreferrer">Contact Us</a>
+                    <a href="./franchising.html" target="_blank" rel="noopener noreferrer">Franchising</a>
+                    <a href="./sustainability.html" target="_blank" rel="noopener noreferrer">Sustainability</a>
+                </nav>
+<!--socials icons where useer will be redirected to the restaurant's social medias -->
+                <section class="social-media-icon">
+
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/facebook-icon.svg" alt="">
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/twitter-icon.svg" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/instagram-icon.svg" alt="">
+                    </a>
+                    
+
+                </section>
+
+
+                <p>© all rights reserved 2022</p>
+            </footer>
+
+        </div>
+
+   <!--The different javascript that is included in the webpages, mostly animations and some basic functionalities -->     
+        <script>
+
+
+            window.addEventListener('scroll', reveal);
+
+            function reveal(){
+                var reveals = document.querySelectorAll('.reveal');
+
+                for(var i=0; i < reveals.length; i++){
+
+                    var windowheight = window.innerHeight;
+                    var revealtop = reveals[i].getBoundingClientRect().top;
+                    var revealpoint = 150;
+
+                    if(revealtop < windowheight - revealpoint){
+                        reveals[i].classList.add('active');
+                    }else{
+                        reveals[i].classList.remove('active');
+                    }
+                }
+            }
+
+            let mybutton = document.getElementById("myBtn");
+            
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+            }
+            
+            function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            }
+
+
+            window.addEventListener('scroll', revealside);
+
+            function revealside(){
+                var revealss = document.querySelectorAll('.reveal-side');
+
+                for(var i=0; i < revealss.length; i++){
+
+                    var windowheight = window.innerHeight;
+                    var revealtop = revealss[i].getBoundingClientRect().top;
+                    var revealpoint = 150;
+
+                    if(revealtop < windowheight - revealpoint){
+                        revealss[i].classList.add('active');
+                    }else{
+                        revealss[i].classList.remove('active');
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', revealleft);
+
+            function revealleft(){
+                var revealss = document.querySelectorAll('.reveal-left');
+
+                for(var i=0; i < revealss.length; i++){
+
+                    var windowheight = window.innerHeight;
+                    var revealtop = revealss[i].getBoundingClientRect().top;
+                    var revealpoint = 150;
+
+                    if(revealtop < windowheight - revealpoint){
+                        revealss[i].classList.add('active');
+                    }else{
+                        revealss[i].classList.remove('active');
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', revealtop);
+
+            function revealtop(){
+                var revealss = document.querySelectorAll('.reveal-top');
+
+                for(var i=0; i < revealss.length; i++){
+
+                    var windowheight = window.innerHeight;
+                    var revealtop = revealss[i].getBoundingClientRect().top;
+                    var revealpoint = 150;
+
+                    if(revealtop < windowheight - revealpoint){
+                        revealss[i].classList.add('active');
+                    }else{
+                        revealss[i].classList.remove('active');
+                    }
+                }
+            }
+            
+            
+
+
+
+
+
+
+
+        </script>
+
+
+
+</body>
+
+</html>
